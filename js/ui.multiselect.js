@@ -137,6 +137,9 @@ $.widget("ui.multiselect", {
 
 		$.Widget.prototype.destroy.apply(this, arguments);
 	},
+    refresh: function() {
+      this._populateLists(this.element.find('option'));
+    },
 	_populateLists: function(options) {
 		this.selectedList.children('.ui-element').remove();
 		this.availableList.children('.ui-element').remove();
